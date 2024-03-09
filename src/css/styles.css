@@ -1,12 +1,5 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import url('./loader.css');
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +15,68 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(10, 10, 121, 0.752);
+  padding: 20px;
+}
+
+input {
+  font-size: 20px;
+}
+
+button {
+  margin-left: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.photo-card {
+  display: inline-block;
+  padding-top: 10px;
+  margin-right: 20px;
+}
+
+img {
+  width: 400px;
+  height: 280px;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.load-more {
+  display: block;
+  width: 100px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0 auto;
+
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(5, 5, 96, 0.775);
+  color: #fafafa;
+}
+
+.hidden {
+  display: none;
+}
+html {
+  scroll-behavior: smooth;
 }
