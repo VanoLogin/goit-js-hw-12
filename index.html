@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vanilla-app-template/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla App Template</title>
+    
+    <script type="module" crossorigin src="/vanilla-app-template/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/vanilla-app-template/assets/vendor-b42c18af.js">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/vendor-a51daae5.css">
+    <link rel="stylesheet" href="/vanilla-app-template/assets/index-da55cee5.css">
+  </head>
+  <body>
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gallery">
+      <!-- Картки зображень !!!!-->
+    </div>
+    <div class="loader-container hidden"><div class="loader"></div></div>
+
+    <button type="button" class="load-more hidden">Load more</button>
+    
+  </body>
+</html>
