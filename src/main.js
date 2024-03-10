@@ -28,7 +28,7 @@ const lightbox = new SimpleLightbox('.photo-card a');
 
 refs.searchForm.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
   event.preventDefault();
   refs.cssLoading.classList.remove('hidden');
   refs.galleryContainer.innerHTML = '';
@@ -37,24 +37,23 @@ function handleSubmit(event) {
   queryParams.queryValue =
     event.currentTarget.elements.searchQuery.value.trim();
 
-  fetchPictures()
-    .then(data => {
-      if (!data) {
-        throw new Error('no data');
-      }
+  try {
+    const data = await fetchPictures();
+    if (data) {
       iziToast.info({
         position: 'topRight',
         title: 'Info',
         message: `Hooray! We found ${data.totalHits} images.`,
       });
-      refs.cssLoading.classList.add('hidden');
-      buttonService.show();
-      refs.loadBtn.addEventListener('click', handleLoadMore);
-    })
-    .catch(err => console.log(err))
-    .finally(() => {
-      refs.searchForm.reset();
-    });
+    }
+  } catch (err) {
+    console.log(err);
+  } finally {
+    refs.cssLoading.classList.add('hidden');
+    refs.loadBtn.addEventListener('click', handleLoadMore);
+    buttonService.show();
+    refs.searchForm.reset();
+  }
 }
 
 function handleLoadMore() {
