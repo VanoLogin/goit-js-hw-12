@@ -14,7 +14,7 @@
 
 Make sure the code is formatted with Prettier and there are no errors or warnings in the console when opening the live task page.
 
-## What i did?
+## What I did?
 
 The project was compiled using Vite.
 
